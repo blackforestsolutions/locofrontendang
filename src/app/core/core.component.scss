@@ -6,6 +6,11 @@ mat-sidenav {
   width: 100%;
 }
 
+.max-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
 @media screen and (min-width: 37.5em) {
   .sidenav {
     display: none;
