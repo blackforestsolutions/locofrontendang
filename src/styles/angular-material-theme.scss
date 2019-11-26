@@ -1,0 +1,46 @@
+$custom-theme: mat-dark-theme(
+  mat-palette($mat-grey, 50),
+  mat-palette($mat-pink, A200),
+  mat-palette($mat-red)
+);
+
+.custom {
+  @include angular-material-theme($custom-theme);
+
+  $background: mat-color($mat-grey, 700);;
+  $primary: mat-color($mat-grey, 50);
+  $accent: mat-color($mat-pink, A200);
+  $warn: mat-color($mat-red, 500);
+
+  main {
+    background-color: $background;
+  }
+  a, a:hover, a:hover span {
+    color: $primary;
+    text-decoration: none;
+    outline: none;
+  }
+  h1, h2, h3, h4, h5, h6, h7 {
+    color: $primary;
+  }
+
+  .mat-raised-button.back {
+    color: $light-primary-text;
+    background-color: mat-color($mat-grey, A700);
+  }
+
+  .mat-card.mat-card-accent {
+    background-color: $accent;
+    color: $dark-primary-text;
+  }
+  .mat-card.mat-card-warn {
+    background-color: $warn;
+    color: $light-primary-text;
+  }
+  .mat-toolbar {
+    @extend .mat-primary;
+    @include mat-elevation(2);
+  }
+}
+
+@include angular-material-theme($custom-theme)

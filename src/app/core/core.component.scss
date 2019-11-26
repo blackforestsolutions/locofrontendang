@@ -1,0 +1,19 @@
+.space {
+  flex: 1 1 auto;
+}
+
+mat-sidenav {
+  width: 100%;
+}
+
+@media screen and (min-width: 37.5em) {
+  .sidenav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .nav-options {
+    display: none;
+  }
+}

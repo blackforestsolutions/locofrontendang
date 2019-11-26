@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Blackforestsolution</span>
+    <span class="space"></span>
+    <button mat-button class="nav-options">
+      <mat-icon>perm_identity</mat-icon>
+      Login
+    </button>
+    <button mat-button class="nav-options">
+      <mat-icon>how_to_reg</mat-icon>
+      Anmelden
+    </button>
+    <button mat-icon-button (click)="sidenav.toggle()" class="sidenav">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [position]="'end'" class="sidenav">
+    <mat-action-list>
+      <button mat-list-item>
+        <mat-icon>perm_identity</mat-icon>
+        Login
+      </button>
+      <button mat-list-item>
+        <mat-icon>how_to_reg</mat-icon>
+        Anmelden
+      </button>
+      <button mat-list-item (click)="sidenav.close()">
+        <mat-icon>close</mat-icon>
+        Schließen
+      </button>
+    </mat-action-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
