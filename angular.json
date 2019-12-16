@@ -82,7 +82,7 @@
               "browserTarget": "locofrontendangular:build:production"
             },
             "mock": {
-              "browserTarget": "demo:build:mock"
+              "browserTarget": "locofrontendangular:build:mock"
             }
           }
         },
