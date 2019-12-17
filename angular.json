@@ -135,6 +135,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "locofrontendangular"
+    }
+  },
+  "defaultProject": "locofrontendangular",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

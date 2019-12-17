@@ -1,0 +1,10 @@
+export enum TravelProvider {
+  DB = 'DB',
+  SBB = 'SBB',
+  ÖBB = 'ÖBB',
+  LUFTHANSA = 'LUFTHANSA',
+  EUROWINGS = 'EUROWINGS',
+  CONDOR = 'CONDOR',
+  FLIXBUS = 'FLIXBUS',
+  BRITISHAIRWAYS = 'BRITISHAIRWAYS',
+}
