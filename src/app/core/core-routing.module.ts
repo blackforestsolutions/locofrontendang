@@ -1,3 +1,4 @@
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CoreComponent } from './core.component';

@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +14,7 @@ import { TravelPointEffects } from './travel-points-ngrx/effects/travel-point.ef
   imports: [
     CommonModule,
     TravelPointsRoutingModule,
+    SharedModule,
     StoreModule.forFeature(fromTravelPoint.travelPointFeatureKey, fromTravelPoint.reducer),
     EffectsModule.forFeature([TravelPointEffects])
   ]
