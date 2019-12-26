@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('../travel-points/travel-points.module').then(m => m.TravelPointsModule)
+        loadChildren: () => import('./../main/main.module').then(m => m.MainModule)
       }
     ]
   }

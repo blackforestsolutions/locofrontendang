@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { JourneyListRoutingModule } from './journey-list-routing.module';
+import { MainRoutingModule } from './main-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    JourneyListRoutingModule
+    MainRoutingModule
   ]
 })
-export class JourneyListModule { }
+export class MainModule { }

@@ -1,4 +1,4 @@
-import { Journey } from '../../../datamodel/journey';
+import { Journey } from '../../../../datamodel/journey';
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 

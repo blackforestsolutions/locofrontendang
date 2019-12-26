@@ -1,4 +1,4 @@
-import { TravelPoint } from './../../../datamodel/travel-point';
+import { TravelPoint } from '../../../../datamodel/travel-point';
 import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 

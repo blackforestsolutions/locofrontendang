@@ -1,4 +1,4 @@
-import { Journey } from './../datamodel/journey';
+import { Journey } from '../../datamodel/journey';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

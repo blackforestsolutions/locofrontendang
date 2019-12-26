@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as TravelPointActions from '../actions/travel-point.actions';
-import { TravelPoint } from './../../../datamodel/travel-point';
+import { TravelPoint } from '../../../../datamodel/travel-point';
 
 export const travelPointFeatureKey = 'travelPoint';
 

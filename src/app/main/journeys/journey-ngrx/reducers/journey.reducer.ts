@@ -1,4 +1,4 @@
-import { Journey } from '../../../datamodel/journey';
+import { Journey } from '../../../../datamodel/journey';
 import { Action, createReducer, on } from '@ngrx/store';
 import * as JourneyActions from '../actions/journey.actions';
 
