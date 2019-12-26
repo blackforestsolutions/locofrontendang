@@ -1,3 +1,4 @@
+import { JourneySearchModule } from './journey-search/journey-search.module';
 import { SharedModule } from '../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,10 @@ import * as fromTravelPoint from './travel-points-ngrx/reducers/travel-point.red
 import { EffectsModule } from '@ngrx/effects';
 import { TravelPointEffects } from './travel-points-ngrx/effects/travel-point.effects';
 
+const modules = [
+  JourneySearchModule
+];
+
 
 @NgModule({
   declarations: [],
@@ -15,6 +20,7 @@ import { TravelPointEffects } from './travel-points-ngrx/effects/travel-point.ef
     CommonModule,
     TravelPointsRoutingModule,
     SharedModule,
+    ...modules,
     StoreModule.forFeature(fromTravelPoint.travelPointFeatureKey, fromTravelPoint.reducer),
     EffectsModule.forFeature([TravelPointEffects])
   ]

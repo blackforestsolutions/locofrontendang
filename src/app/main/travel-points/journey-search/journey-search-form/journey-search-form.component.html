@@ -1,0 +1,42 @@
+<form [formGroup]="this.journeySearchForm" (ngSubmit)="this.submitJourney.emit()">
+
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Hin- und Rueckfahrt</mat-radio-button>
+    <mat-radio-button value="2">Einfache Fahrt</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field>
+    <input matInput placeholder="von" [matAutocomplete]="start">
+  </mat-form-field>
+  <mat-autocomplete #start="matAutocomplete">
+    <mat-option *ngFor="let start of starts">
+      {{ start }}
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-form-field>
+    <input matInput placeholder="nach" [matAutocomplete]="destination">
+  </mat-form-field>
+  <mat-autocomplete #destination="matAutocomplete">
+    <mat-option *ngFor="let destination of destinations">
+      {{ destination }}
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="outwardJourney" placeholder="hin">
+    <mat-datepicker-toggle matSuffix [for]="outwardJourney"></mat-datepicker-toggle>
+    <mat-datepicker #outwardJourney></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="returnJourney" placeholder="zurueck">
+    <mat-datepicker-toggle matSuffix [for]="returnJourney"></mat-datepicker-toggle>
+    <mat-datepicker #returnJourney></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-button type="submit">
+    <mat-icon>search</mat-icon>
+    Suchen
+  </button>
+</form>

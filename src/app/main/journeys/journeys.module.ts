@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { Journey } from '../../datamodel/journey';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,6 +15,7 @@ import { JourneyEffects } from './journey-ngrx/effects/journey.effects';
   imports: [
     CommonModule,
     JourneysRoutingModule,
+    SharedModule,
     StoreModule.forFeature(fromJourney.journeyFeatureKey, fromJourney.reducer),
     EffectsModule.forFeature([JourneyEffects])
   ]

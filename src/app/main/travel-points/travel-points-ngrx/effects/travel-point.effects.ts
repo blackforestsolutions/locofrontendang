@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, concatMap } from 'rxjs/operators';
+import { catchError, map, concatMap, switchMap } from 'rxjs/operators';
 import { EMPTY, of } from 'rxjs';
 
 import * as TravelPointActions from '../actions/travel-point.actions';
+import { TravelPointStoreService } from '../services/travel-point-store.service';
 
 
 
 @Injectable()
 export class TravelPointEffects {
 
-  loadTravelPoints$ = createEffect(() => {
-    return this.actions$.pipe(
+  constructor(
+    private actions$: Actions,
+    private travelPointStoreService: TravelPointStoreService
+  ) {}
 
-      ofType(TravelPointActions.loadTravelPoints),
-      concatMap(() =>
-        /** An EMPTY observable only emits completion. Replace with your own observable API request */
-        EMPTY.pipe(
-          map(data => TravelPointActions.loadTravelPointsSuccess({ travelPoints: data })),
-          catchError(error => of(TravelPointActions.loadTravelPointsFailure({ error }))))
-      )
-    );
-  });
-
-
-
-  constructor(private actions$: Actions) {}
+  loadTravelPoints$ = createEffect(() => this.actions$.pipe(
+    ofType(TravelPointActions.loadTravelPoints),
+    switchMap(() => {
+      return this.travelPointStoreService.getTravelPointsBy().pipe(
+        map(travelPoints => TravelPointActions.loadTravelPointsSuccess({ travelPoints })),
+        catchError(error => of(TravelPointActions.loadTravelPointsFailure({ error })))
+      );
+    })
+  ));
 
 }
