@@ -8,12 +8,12 @@ const routes: Routes = [
   {
     path: '',
     component: CoreComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     component: StartComponent
-    //   }
-    // ]
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../travel-points/travel-points.module').then(m => m.TravelPointsModule)
+      }
+    ]
   }
 ];
 

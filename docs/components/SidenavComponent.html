@@ -65,7 +65,7 @@
                                     <a href="../modules/AdminModule.html" >AdminModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/AdminRoutingModule.html"  class="active" >AdminRoutingModule</a>
+                                    <a href="../modules/AdminRoutingModule.html" >AdminRoutingModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/AngularMaterialModule.html" >AngularMaterialModule</a>
@@ -151,7 +151,7 @@
                                     <a href="../components/SearchFormComponent.html" >SearchFormComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/SidenavComponent.html" >SidenavComponent</a>
+                                    <a href="../components/SidenavComponent.html"  class="active" >SidenavComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -304,7 +304,7 @@
                                            <a href="../modules/AdminModule.html" >AdminModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/AdminRoutingModule.html"  class="active" >AdminRoutingModule</a>
+                                           <a href="../modules/AdminRoutingModule.html" >AdminRoutingModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/AngularMaterialModule.html" >AngularMaterialModule</a>
@@ -390,7 +390,7 @@
                                            <a href="../components/SearchFormComponent.html" >SearchFormComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/SidenavComponent.html" >SidenavComponent</a>
+                                           <a href="../components/SidenavComponent.html"  class="active" >SidenavComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -492,66 +492,130 @@
                    
                    </nav>
                </div>
-               <div class="content module">
+               <div class="content component">
                    <div class="content-data">
 
+
 <ol class="breadcrumb">
-  <li>Modules</li>
-  <li>AdminRoutingModule</li>
+  <li>Components</li>
+  <li>SidenavComponent</li>
 </ol>
 
-<div class="text-center">
-    <object id="demo-svg" type="image/svg+xml" data="../modules/AdminRoutingModule/dependencies.svg" style="width: 100%; height: 250px;">
-            Your browser does not support SVG
-    </object>
-    <div class="btn-group">
-        <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
-        <button id="reset" class="btn btn-default btn-sm">Reset</button>
-        <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
-    </div>
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/core/sidenav/sidenav.component.ts</code>
+</p>
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>bs-sidenav</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>sidenav.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>sidenav.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor()</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> sidenav</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>sidenav:     <code>MatSidenav</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
-<script src="../js/libs/svg-pan-zoom.min.js"></script>
-<script src="../js/svg-pan-zoom.controls.js"></script>
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, OnInit, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
 
-<ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-    </li>
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-    </li>
-</ul>
+@Component({
+  selector: &#x27;bs-sidenav&#x27;,
+  templateUrl: &#x27;./sidenav.component.html&#x27;,
+  styleUrls: [&#x27;./sidenav.component.scss&#x27;]
+})
+export class SidenavComponent implements OnInit {
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/admin/admin-routing.module.ts</code>
-        </p>
+  @ViewChild(&#x27;sidenav&#x27;, { static: false}) sidenav: MatSidenav;
 
+  constructor() { }
 
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
+  ngOnInit() {
+  }
+}
+</code></pre>
         </div>
     </div>
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
-
-
-const routes: Routes &#x3D; [];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AdminRoutingModule { }
-</code></pre>
-    </div>
-</div>
 
 
 

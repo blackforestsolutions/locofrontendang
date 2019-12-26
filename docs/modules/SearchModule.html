@@ -65,7 +65,7 @@
                                     <a href="../modules/AdminModule.html" >AdminModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/AdminRoutingModule.html"  class="active" >AdminRoutingModule</a>
+                                    <a href="../modules/AdminRoutingModule.html" >AdminRoutingModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/AngularMaterialModule.html" >AngularMaterialModule</a>
@@ -101,7 +101,7 @@
                                     <a href="../modules/JourneysRoutingModule.html" >JourneysRoutingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/SearchModule.html" >SearchModule</a>
+                                    <a href="../modules/SearchModule.html"  class="active" >SearchModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SearchRoutingModule.html" >SearchRoutingModule</a>
@@ -304,7 +304,7 @@
                                            <a href="../modules/AdminModule.html" >AdminModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/AdminRoutingModule.html"  class="active" >AdminRoutingModule</a>
+                                           <a href="../modules/AdminRoutingModule.html" >AdminRoutingModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/AngularMaterialModule.html" >AngularMaterialModule</a>
@@ -340,7 +340,7 @@
                                            <a href="../modules/JourneysRoutingModule.html" >JourneysRoutingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/SearchModule.html" >SearchModule</a>
+                                           <a href="../modules/SearchModule.html"  class="active" >SearchModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SearchRoutingModule.html" >SearchRoutingModule</a>
@@ -497,11 +497,11 @@
 
 <ol class="breadcrumb">
   <li>Modules</li>
-  <li>AdminRoutingModule</li>
+  <li>SearchModule</li>
 </ol>
 
 <div class="text-center">
-    <object id="demo-svg" type="image/svg+xml" data="../modules/AdminRoutingModule/dependencies.svg" style="width: 100%; height: 250px;">
+    <object id="demo-svg" type="image/svg+xml" data="../modules/SearchModule/dependencies.svg" style="width: 100%; height: 250px;">
             Your browser does not support SVG
     </object>
     <div class="btn-group">
@@ -528,27 +528,52 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/admin/admin-routing.module.ts</code>
+            <code>src/app/travel-points/search/search.module.ts</code>
         </p>
 
 
         <div class="container-fluid module">
             <div class="row">
+                <div class="col-sm-3">
+                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="../components/SearchComponent.html">SearchComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/SearchFormComponent.html">SearchFormComponent</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Imports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#imports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="../modules/SearchRoutingModule.html" >SearchRoutingModule</a>
+                            </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+        <pre><code class="hljs javascript">import { SharedModule } from &#x27;./../../shared/shared.module&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
 
+import { SearchRoutingModule } from &#x27;./search-routing.module&#x27;;
+import { SearchComponent } from &#x27;./search.component&#x27;;
+import { SearchFormComponent } from &#x27;./search-form/search-form.component&#x27;;
 
-const routes: Routes &#x3D; [];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  declarations: [SearchComponent, SearchFormComponent],
+  imports: [
+    CommonModule,
+    SearchRoutingModule
+  ]
 })
-export class AdminRoutingModule { }
+export class SearchModule { }
 </code></pre>
     </div>
 </div>
