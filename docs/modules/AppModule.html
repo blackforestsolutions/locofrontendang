@@ -197,6 +197,12 @@ import { NgModule } from &#x27;@angular/core&#x27;;
 
 import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
+import { StoreModule } from &#x27;@ngrx/store&#x27;;
+import { reducers, metaReducers } from &#x27;./reducers&#x27;;
+import { StoreDevtoolsModule } from &#x27;@ngrx/store-devtools&#x27;;
+import { environment } from &#x27;../environments/environment&#x27;;
+import { EffectsModule } from &#x27;@ngrx/effects&#x27;;
+import { AppEffects } from &#x27;./app.effects&#x27;;
 
 @NgModule({
   declarations: [
@@ -204,7 +210,16 @@ import { AppComponent } from &#x27;./app.component&#x27;;
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
