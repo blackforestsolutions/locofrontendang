@@ -18,15 +18,5 @@ jobs:
       - name: Unit Tests
         run: yarn run test:pipeline
 
-      - name: Update Docs
-        run: yarn run compodoc
-
-      - uses: EndBug/add-and-commit@v4.0.1
-        with:
-          add: 'docs'
-          message: 'documentation update'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build
         run: yarn run build
