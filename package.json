@@ -10,8 +10,7 @@
     "test:pipeline": "ng test --watch=false --browsers=ChromeHeadlessCustom",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "npx compodoc -p tsconfig.json -s -d docs",
-    "pre-push": "npx compodoc -p tsconfig.json -s -d docs"
+    "compodoc": "npx compodoc -p tsconfig.json -s -d docs"
   },
   "private": true,
   "dependencies": {
