@@ -12,19 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      # - name: Use Node.js ${{ env.NODE_VERSION }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: yarn install
 
-      - name: Lint
-        run: yarn run lint
+      # - name: Lint
+      #   run: yarn run lint
 
-      - name: Build
-        run: yarn run build -- --prod
+      # - name: Build
+      #   run: yarn run build -- --prod
 
       - name: Unit tests
         run: yarn run test
