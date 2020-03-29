@@ -2,20 +2,12 @@ name: Angular CICD
 
 on: [push]
 
-env:
-  NODE_VERSION: '10.x'
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
-
-      # - name: Use Node.js ${{ env.NODE_VERSION }}
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: yarn install
@@ -28,3 +20,8 @@ jobs:
 
       - name: Build
         run: yarn run build -- --prod
+
+      - name: docker build
+        uses: actions/docker/cli
+        with:
+          args: build -t locofrontendangular .
