@@ -25,7 +25,7 @@ jobs:
         with:
           add: 'docs'
           message: 'documentation update'
-        evn:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: build
