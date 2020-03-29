@@ -5,18 +5,16 @@ import { Observable } from 'rxjs';
 import { AppEffects } from './app.effects';
 
 describe('AppEffects', () => {
+  // tslint:disable-next-line: prefer-const
   let actions$: Observable<any>;
   let effects: AppEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        AppEffects,
-        provideMockActions(() => actions$)
-      ]
+      providers: [AppEffects, provideMockActions(() => actions$)],
     });
 
-    effects = TestBed.get<AppEffects>(AppEffects);
+    effects = TestBed.inject<AppEffects>(AppEffects);
   });
 
   it('should be created', () => {
