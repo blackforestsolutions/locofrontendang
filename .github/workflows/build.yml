@@ -22,6 +22,6 @@ jobs:
         run: yarn run build -- --prod
 
       - name: docker build
-        uses: actions/docker/cli
+        uses: actions/docker/cli@master
         with:
           args: build -t locofrontendangular .
