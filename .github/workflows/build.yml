@@ -9,14 +9,24 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install dependencies
+      - name: install dependencies
         run: yarn install
 
-      - name: Lint
+      - name: check styles lint
         run: yarn run lint
 
-      - name: Unit tests
+      - name: Run Unit Tests
         run: yarn run test:pipeline
 
-      - name: Build
+      - name: update docs
+        run: yarn run compodoc
+
+      - uses: EndBug/add-and-commit@v4.0.1
+        with:
+          add: 'docs'
+          message: 'documentation update'
+        evn:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: build
         run: yarn run build
