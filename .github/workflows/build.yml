@@ -36,7 +36,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build the latest Docker image
-        run: docker build . --file Dockerfile --tag blackforestsolutions/locofrontendang:latest
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/locofrontendang:latest
 
       - name: Push the latest Docker image
-        run: docker push blackforestsolutions/locofrontendang:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/locofrontendang:latest
