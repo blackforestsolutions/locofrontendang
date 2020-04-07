@@ -32,6 +32,11 @@ jobs:
       - name: Build
         run: yarn run build
 
+  docker:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Build the latest Docker image
         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/locofrontendang:latest
 
