@@ -34,6 +34,7 @@ jobs:
 
       - name: Build latest Docker Image
         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/locofrontendang:latest
+        if: github.base_ref == 'master'
 
       - name: Login Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
