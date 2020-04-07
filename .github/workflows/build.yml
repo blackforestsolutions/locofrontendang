@@ -33,7 +33,7 @@ jobs:
         run: yarn run build
 
       - name: Login to DockerHub Registry
-        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build the latest Docker image
         run: docker build . --file Dockerfile --tag pjlamb12/angular-cli:latest
