@@ -1,0 +1,6 @@
+<bs-journey-search></bs-journey-search>
+<ng-container *ngIf="journeys$ | async as journeys">
+  <bs-journey-list-item *ngFor="let j of this.journeys" [journey]="this.j"> </bs-journey-list-item>
+  <p *ngIf="!this.journeys.length && !(loading$ | async)">Es wurden keine Reisen gefunden</p>
+</ng-container>
+<ng-container *ngIf="loading$ | async">Deine Reisen werden geladen...</ng-container>

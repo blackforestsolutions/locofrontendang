@@ -18,3 +18,5 @@ docs
 .prettierignore
 .prettierrc
 .github
+dockerize.ps1
+redeploy.ps1

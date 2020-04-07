@@ -58,6 +58,15 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
+                            <a href="#adapter" title="src/app/store/journeys/journeys.reducer.ts"><b>adapter</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#apiTokenFeatureKey" title="src/app/store/api-token/api-token.reducer.ts"><b>apiTokenFeatureKey</b>&nbsp;&nbsp;&nbsp;(src/.../api-token.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#apiTokenReducer" title="src/app/store/api-token/api-token.reducer.ts"><b>apiTokenReducer</b>&nbsp;&nbsp;&nbsp;(src/.../api-token.reducer.ts)</a>
+                        </li>
+                        <li>
                             <a href="#context" title="src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
                         </li>
                         <li>
@@ -65,6 +74,39 @@
                         </li>
                         <li>
                             <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getApiToken" title="src/app/store/api-token/api-token.selectors.ts"><b>getApiToken</b>&nbsp;&nbsp;&nbsp;(src/.../api-token.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getJourneysByApiToken" title="src/app/store/journeys/journeys.selectors.ts"><b>getJourneysByApiToken</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/store/journeys/journeys.selectors.ts"><b></b>&nbsp;&nbsp;&nbsp;(src/.../journeys.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getJourneysLoading" title="src/app/store/journeys/journeys.selectors.ts"><b>getJourneysLoading</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/store/api-token/api-token.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../api-token.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/store/journeys/journeys.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#journeysFeatureKey" title="src/app/store/journeys/journeys.reducer.ts"><b>journeysFeatureKey</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#journeysReducer" title="src/app/store/journeys/journeys.reducer.ts"><b>journeysReducer</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadJourneysByToken" title="src/app/store/journeys/journeys.actions.ts"><b>loadJourneysByToken</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadJourneysByTokenFailure" title="src/app/store/journeys/journeys.actions.ts"><b>loadJourneysByTokenFailure</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadJourneysByTokenSuccess" title="src/app/store/journeys/journeys.actions.ts"><b>loadJourneysByTokenSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.actions.ts)</a>
                         </li>
                         <li>
                             <a href="#metaReducers" title="src/app/reducers/index.ts"><b>metaReducers</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
@@ -75,6 +117,15 @@
                         <li>
                             <a href="#require" title="src/test.ts"><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
                         </li>
+                        <li>
+                            <a href="#selectApiTokenState" title="src/app/store/api-token/api-token.selectors.ts"><b>selectApiTokenState</b>&nbsp;&nbsp;&nbsp;(src/.../api-token.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectJourneysState" title="src/app/store/journeys/journeys.selectors.ts"><b>selectJourneysState</b>&nbsp;&nbsp;&nbsp;(src/.../journeys.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateApiToken" title="src/app/store/api-token/api-token.actions.ts"><b>updateApiToken</b>&nbsp;&nbsp;&nbsp;(src/.../api-token.actions.ts)</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -82,6 +133,214 @@
     </table>
 </section>
 
+    <h3>src/app/store/journeys/journeys.reducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="adapter"></a>
+                        <span class="name">
+                            <b>
+                            adapter</b>
+                            <a href="#adapter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createEntityAdapter&lt;Journey&gt;()</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialState"></a>
+                        <span class="name">
+                            <b>
+                            initialState</b>
+                            <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/State.html" target="_self" >State</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>adapter.getInitialState({
+  loading: false,
+})</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="journeysFeatureKey"></a>
+                        <span class="name">
+                            <b>
+                            journeysFeatureKey</b>
+                            <a href="#journeysFeatureKey"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;journeys&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="journeysReducer"></a>
+                        <span class="name">
+                            <b>
+                            journeysReducer</b>
+                            <a href="#journeysReducer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createReducer(
+  initialState,
+  on(JourneysActions.loadJourneysByToken, (state) &#x3D;&gt; {
+    return {
+      ...state,
+      loading: true,
+    };
+  }),
+  on(JourneysActions.loadJourneysByTokenSuccess, (state, action) &#x3D;&gt; {
+    return {
+      ...adapter.addAll(action.journeys, state),
+      loading: false,
+    };
+  }),
+  on(JourneysActions.loadJourneysByTokenFailure, (state, action) &#x3D;&gt; state)
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/api-token/api-token.reducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="apiTokenFeatureKey"></a>
+                        <span class="name">
+                            <b>
+                            apiTokenFeatureKey</b>
+                            <a href="#apiTokenFeatureKey"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;apiToken&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="apiTokenReducer"></a>
+                        <span class="name">
+                            <b>
+                            apiTokenReducer</b>
+                            <a href="#apiTokenReducer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createReducer(
+  initialState,
+  on(ApiTokenActions.updateApiToken, (state, action) &#x3D;&gt; {
+    return {
+      ...state,
+      apiToken: action.apiToken,
+    };
+  })
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialState"></a>
+                        <span class="name">
+                            <b>
+                            initialState</b>
+                            <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/State.html" target="_self" >State</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  apiToken: {
+    departure: &#x27;&#x27;,
+    arrival: &#x27;&#x27;,
+    departureDate: new Date(),
+  },
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
     <h3>src/test.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -151,7 +410,8 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-  production: true
+  production: true,
+  apiUrl: &#x27;&#x27;,
 }</code>
                         </td>
                     </tr>
@@ -183,8 +443,218 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-  production: false
+  production: false,
+  apiUrl: &#x27;http://localhost:8082&#x27;,
 }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/api-token/api-token.selectors.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getApiToken"></a>
+                        <span class="name">
+                            <b>
+                            getApiToken</b>
+                            <a href="#getApiToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(selectApiTokenState, (state) &#x3D;&gt; state.apiToken)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectApiTokenState"></a>
+                        <span class="name">
+                            <b>
+                            selectApiTokenState</b>
+                            <a href="#selectApiTokenState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createFeatureSelector&lt;fromApiToken.State&gt;(fromApiToken.apiTokenFeatureKey)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/journeys/journeys.selectors.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getJourneysByApiToken"></a>
+                        <span class="name">
+                            <b>
+                            getJourneysByApiToken</b>
+                            <a href="#getJourneysByApiToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(selectJourneysState, selectAll)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name=""></a>
+                        <span class="name">
+                            <b>
+                            </b>
+                            <a href="#"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>fromJourneys.adapter.getSelectors()</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getJourneysLoading"></a>
+                        <span class="name">
+                            <b>
+                            getJourneysLoading</b>
+                            <a href="#getJourneysLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createSelector(selectJourneysState, (state) &#x3D;&gt; state.loading)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectJourneysState"></a>
+                        <span class="name">
+                            <b>
+                            selectJourneysState</b>
+                            <a href="#selectJourneysState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createFeatureSelector&lt;fromJourneys.State&gt;(
+  fromJourneys.journeysFeatureKey
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/journeys/journeys.actions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadJourneysByToken"></a>
+                        <span class="name">
+                            <b>
+                            loadJourneysByToken</b>
+                            <a href="#loadJourneysByToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Journeys] Load Journeys By ApiToken&#x27;,
+  props&lt;{ apiToken: ApiTokenAndUrlInformation }&gt;()
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadJourneysByTokenFailure"></a>
+                        <span class="name">
+                            <b>
+                            loadJourneysByTokenFailure</b>
+                            <a href="#loadJourneysByTokenFailure"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Journeys] Load Journeys By ApiToken Failure&#x27;,
+  props&lt;{ error: HttpErrorResponse }&gt;()
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadJourneysByTokenSuccess"></a>
+                        <span class="name">
+                            <b>
+                            loadJourneysByTokenSuccess</b>
+                            <a href="#loadJourneysByTokenSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Journeys] Load Journeys By ApiToken Success&#x27;,
+  props&lt;{ journeys: Journey[] }&gt;()
+)</code>
                         </td>
                     </tr>
 
@@ -214,7 +684,9 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>!environment.production ? [] : []</code>
+                            <i>Default value : </i><code>!environment.production
+  ? []
+  : []</code>
                         </td>
                     </tr>
 
@@ -235,15 +707,40 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../interfaces/State.html" target="_self" >ActionReducerMap&lt;State&gt;</a></code>
+                            <i>Type : </i>    <code>ActionReducerMap&lt;State&gt;</code>
 
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>{
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
 
-}</code>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/store/api-token/api-token.actions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateApiToken"></a>
+                        <span class="name">
+                            <b>
+                            updateApiToken</b>
+                            <a href="#updateApiToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[ApiTokenAndUrlInformation] Update ApiToken&#x27;,
+  props&lt;{ apiToken: ApiTokenAndUrlInformation }&gt;()
+)</code>
                         </td>
                     </tr>
 

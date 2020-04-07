@@ -1,0 +1,8 @@
+<form class="apiTokenForm" [formGroup]="apiTokenForm" (ngSubmit)="submitForm()">
+  <label>Von Bahnhof / Haltestelle / Adresse</label>
+  <input [formControlName]="'departure'" id="departure" />
+  <label>Nach Bahnhof / Haltestelle / Adresse</label>
+  <input [formControlName]="'arrival'" id="arrival" />
+  <input type="datetime" [formControlName]="'departureDate'" id="departureDate"/>
+  <button type="submit">Suchen</button>
+</form>
