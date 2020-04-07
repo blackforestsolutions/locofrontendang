@@ -1,21 +1,12 @@
 name: Angular CI/CD
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test-build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Output
-        run: echo "${{ github.head_ref }}"
-
-      - name: Output 2
-        run: echo "${{ github.event_name }}"
-
-      - name: Output 3
-        run: echo "${{ github.base_ref }}"
-
       - name: Checkout
         uses: actions/checkout@v2
 
