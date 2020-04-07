@@ -1,6 +1,6 @@
 name: Angular CI/CD
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   test-build-deploy:
@@ -35,10 +35,10 @@ jobs:
       - name: Build latest Docker Image
         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/locofrontendang:latest
 
-      - name: Login Dockerhub
+      - name: Login Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        if: github.event.pull_request.head_ref == 'master'
+        if: github.head_ref == 'master'
 
       - name: Push latest Docker Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/locofrontendang:latest
-        if: github.event.pull_request.head_ref == 'master'
+        if: github.head_ref == 'master'
