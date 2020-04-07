@@ -31,3 +31,19 @@ jobs:
 
       - name: Build
         run: yarn run build
+
+      - name: docker build
+        uses: actions/docker/cli
+        with:
+          args: build -t 0.0.1 .
+
+      - name: docker login
+        uses: actions/docker/login
+        env:
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+
+      - name: docker push
+        uses: actions/docker/cli
+        with:
+          args: push blackforestsolutions/locofrontendang
