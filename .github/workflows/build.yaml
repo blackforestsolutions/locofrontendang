@@ -1,9 +1,9 @@
-name: Angular Continous Integration
+name: Angular CI/CD
 
 on: [push, pull_request]
 
 jobs:
-  testAndBuild:
+  test-build-deploy:
     runs-on: ubuntu-latest
 
     steps:
