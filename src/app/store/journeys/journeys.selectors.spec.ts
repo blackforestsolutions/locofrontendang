@@ -18,7 +18,7 @@ describe('Journeys Selectors', () => {
 
     const result = getJourneysLoading.projector(state);
 
-    expect(result).toBeFalsy();
+    expect(result).toBeTruthy();
   });
 
   it('should get a journey list', () => {});
