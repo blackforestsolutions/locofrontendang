@@ -22,12 +22,12 @@ jobs:
         run: yarn run lint
 
       - name: Unit Tests
-        run: yarn run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
+        run: yarn run test --watch=false --progress=false --browsers=ChromeHeadlessCI --code-coverage
 
       - run: yarn run webdriver-update-ci
 
       - name: E2E Tests
-        run: yarn run e2e -- --protractor-config=./e2e/protractor-ci.conf.js --webdriver-update=false
+        run: yarn run e2e --protractor-config=./e2e/protractor-ci.conf.js --webdriver-update=false
 
       - name: Build
         run: yarn run build --prod --aot --progress=false
