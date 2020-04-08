@@ -5,7 +5,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('JourneyStoreService', () => {
   let service: JourneyStoreService;
-  let apiMock: string;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

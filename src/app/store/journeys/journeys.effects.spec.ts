@@ -7,7 +7,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { JourneyStoreService } from '../services/journey-store.service';
 
 describe('JourneysEffects', () => {
-  let actions$: Observable<any>;
+  const actions$: Observable<any> = new Observable();
   let effects: JourneysEffects;
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('JourneysEffects', () => {
       ],
     });
 
-    effects = TestBed.get<JourneysEffects>(JourneysEffects);
+    effects = TestBed.inject<JourneysEffects>(JourneysEffects);
   });
 
   it('should be created', () => {
