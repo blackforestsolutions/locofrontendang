@@ -78,20 +78,18 @@
   ActionReducerMap,
   createFeatureSelector,
   createSelector,
-  MetaReducer
+  MetaReducer,
 } from &#x27;@ngrx/store&#x27;;
 import { environment } from &#x27;../../environments/environment&#x27;;
 
-export interface State {
+// tslint:disable-next-line: no-empty-interface
+export interface State {}
 
-}
+export const reducers: ActionReducerMap&lt;State&gt; &#x3D; {};
 
-export const reducers: ActionReducerMap&lt;State&gt; &#x3D; {
-
-};
-
-
-export const metaReducers: MetaReducer&lt;State&gt;[] &#x3D; !environment.production ? [] : [];
+export const metaReducers: MetaReducer&lt;State&gt;[] &#x3D; !environment.production
+  ? []
+  : [];
 </code></pre>
     </div>
 </div>
