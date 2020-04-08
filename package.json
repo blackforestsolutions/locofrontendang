@@ -2,6 +2,7 @@
   "name": "locofrontendang",
   "version": "0.0.0",
   "scripts": {
+    "release": "standard-version",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --aot",
@@ -9,6 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "webdriver-update-ci": "webdriver-manager update --standalone false --gecko false --versions.chrome 2.37",
     "compodoc": "npx compodoc -p tsconfig.json -s -d docs"
   },
   "private": true,
@@ -26,6 +28,7 @@
     "@ngrx/schematics": "^9.1.0",
     "@ngrx/store": "9.1.0",
     "@ngrx/store-devtools": "9.1.0",
+    "ngx-semantic-version": "^1.2.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -40,7 +43,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
-    "husky": "^4.2.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -54,6 +56,22 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.0.9",
+    "standard-version": "^7.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
