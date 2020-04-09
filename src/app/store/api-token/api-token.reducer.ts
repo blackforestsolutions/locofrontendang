@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import * as ApiTokenActions from './api-token.actions';
 
 export const apiTokenFeatureKey = 'apiToken';

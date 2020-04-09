@@ -1,8 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import { Observable } from 'rxjs';
-import { Journey } from 'src/model/locodatamodel';
+import { Journey } from 'src/test/locodatamodel';
 
 @Injectable({
   providedIn: 'root',

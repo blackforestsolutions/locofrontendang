@@ -6,7 +6,7 @@ import {
   tick,
 } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import { JourneySearchFormComponent } from './journey-search-form.component';
 import { By } from '@angular/platform-browser';
 

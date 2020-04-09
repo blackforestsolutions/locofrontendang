@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { JourneySearchFormComponent } from '../components/journey-search-form/journey-search-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { apiToken } from 'src/model/test-object-mother.spec';
+import { apiToken } from 'src/test/test-object-mother.spec';
 
 describe('JourneySearchComponent', () => {
   let component: JourneySearchComponent;

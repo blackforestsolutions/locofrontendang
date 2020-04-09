@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { Journey } from 'src/model/locodatamodel';
+import { Journey } from 'src/test/locodatamodel';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 
 export const loadJourneysByToken = createAction(
   '[Journeys] Load Journeys By ApiToken',

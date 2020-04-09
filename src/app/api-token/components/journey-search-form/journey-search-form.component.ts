@@ -6,7 +6,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Journey } from 'src/model/locodatamodel';
+import { Journey } from 'src/test/locodatamodel';
 
 @Component({
   selector: 'bs-journey-list-item',

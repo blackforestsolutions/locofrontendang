@@ -1,6 +1,6 @@
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import { getApiToken } from './api-token.selectors';
-import { apiToken } from '../../../model/test-object-mother.spec';
+import { apiToken } from '../../../test/test-object-mother.spec';
 
 describe('ApiToken Selectors', () => {
   let initialState: any;

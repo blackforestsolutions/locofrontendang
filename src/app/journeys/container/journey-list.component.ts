@@ -9,8 +9,8 @@ import {
   getJourneysByApiToken,
   getJourneysLoading,
 } from 'src/app/store/journeys/journeys.selectors';
-import { ApiTokenAndUrlInformation } from 'src/model/api-token-and-url-information';
-import { Journey } from 'src/model/locodatamodel';
+import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
+import { Journey } from 'src/test/locodatamodel';
 
 @Component({
   selector: 'bs-journey-list',

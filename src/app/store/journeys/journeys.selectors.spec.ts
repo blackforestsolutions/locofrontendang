@@ -1,6 +1,6 @@
 import { getJourneysLoading } from './journeys.selectors';
-import { Journey } from 'src/model/locodatamodel';
-import { journey } from '../../../model/test-object-mother.spec';
+import { Journey } from 'src/test/locodatamodel';
+import { journey } from '../../../test/test-object-mother.spec';
 
 describe('Journeys Selectors', () => {
   let initialState: any;

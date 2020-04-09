@@ -1,6 +1,6 @@
 import { updateApiToken } from './api-token.actions';
 import * as fromApiToken from './api-token.reducer';
-import { apiToken } from '../../../model/test-object-mother.spec';
+import { apiToken } from '../../../test/test-object-mother.spec';
 
 describe('ApiToken Reducer', () => {
   it('should create initialState correctly', () => {
