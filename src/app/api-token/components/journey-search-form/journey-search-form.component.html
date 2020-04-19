@@ -3,6 +3,9 @@
   <input [formControlName]="'departure'" id="departure" />
   <label>Nach Bahnhof / Haltestelle / Adresse</label>
   <input [formControlName]="'arrival'" id="arrival" />
-  <input type="datetime" [formControlName]="'departureDate'" id="departureDate"/>
+  <label>Abfahrtszeit</label>
+  <input type="datetime" [formControlName]="'departureDate'" id="departureDate" />
+  <label>Ankunftszeit</label>
+  <input type="datetime" [formControlName]="'arrivalDate'" id="arrivalDate" />
   <button type="submit">Suchen</button>
 </form>

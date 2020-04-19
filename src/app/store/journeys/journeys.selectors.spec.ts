@@ -1,6 +1,4 @@
 import { getJourneysLoading } from './journeys.selectors';
-import { Journey } from 'src/test/locodatamodel';
-import { journey } from '../../../test/test-object-mother.spec';
 
 describe('Journeys Selectors', () => {
   let initialState: any;
@@ -21,5 +19,7 @@ describe('Journeys Selectors', () => {
     expect(result).toBeTruthy();
   });
 
-  it('should get a journey list', () => {});
+  it('should get a journey list', () => {
+    expect(true).toBeFalsy();
+  });
 });

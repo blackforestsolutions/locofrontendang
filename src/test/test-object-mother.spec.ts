@@ -1,10 +1,11 @@
-import { ApiTokenAndUrlInformation } from './api-token-and-url-information';
-import { Journey } from './locodatamodel';
+import { ApiTokenAndUrlInformation, Journey } from '@blackforestsolutions/locodatamodel';
+
+export const testUuuid1 = 'd3078d7a-2351-4620-927c-d793c053a630';
 
 export const apiToken: ApiTokenAndUrlInformation = {
   arrival: 'Hamburg',
   departure: 'München',
-  departureDate: new Date(),
+  departureDate: new Date().toISOString(),
 };
 
-export const journey: Journey = { id: 'd3078d7a-2351-4620-927c-d793c053a630' } as Journey;
+export const journey: Journey = { id: testUuuid1 };

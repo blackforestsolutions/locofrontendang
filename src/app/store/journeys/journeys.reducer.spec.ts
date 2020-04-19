@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Action } from '@ngrx/store';
-import { Journey } from 'src/test/locodatamodel';
 import { apiToken } from '../../../test/test-object-mother.spec';
 import { loadJourneysByToken, loadJourneysByTokenFailure, loadJourneysByTokenSuccess } from './journeys.actions';
 import * as fromJourneys from './journeys.reducer';
+import { Journey } from '@blackforestsolutions/locodatamodel';
 
 describe('Journeys Reducer', () => {
   it('should create initialState correctly', () => {
@@ -49,7 +49,9 @@ describe('Journeys Reducer', () => {
       expect(newState.loading).toBeFalsy();
     });
 
-    // it('should change the journey list', () => {});
+    it('should change the journey list', () => {
+      expect(true).toBeFalsy();
+    });
   });
 
   describe('load Journeys by Token Failure', () => {

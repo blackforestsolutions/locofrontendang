@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as JourneysActions from './journeys.actions';
-import { Journey } from 'src/test/locodatamodel';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
+import { Journey } from '@blackforestsolutions/locodatamodel';
 
 export const journeysFeatureKey = 'journeys';
 

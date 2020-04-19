@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import * as ApiTokenActions from './api-token.actions';
+import { ApiTokenAndUrlInformation } from '@blackforestsolutions/locodatamodel';
 
 export const apiTokenFeatureKey = 'apiToken';
 
@@ -12,7 +12,8 @@ export const initialState: State = {
   apiToken: {
     departure: '',
     arrival: '',
-    departureDate: new Date(),
+    arrivalDate: new Date().toISOString(),
+    departureDate: new Date().toISOString(),
   },
 };
 

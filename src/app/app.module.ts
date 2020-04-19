@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ApiModule, BASE_PATH } from '@blackforestsolutions/locodatamodel';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { EffectsModule } from '@ngrx/effects';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { CoreModule } from './core/core.module';
+import { metaReducers, reducers } from './reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +19,7 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    ApiModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -32,7 +33,12 @@ import { CoreModule } from './core/core.module';
     }),
     EffectsModule.forRoot([AppEffects]),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: BASE_PATH,
+      useValue: environment.API_BASE_PATH,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

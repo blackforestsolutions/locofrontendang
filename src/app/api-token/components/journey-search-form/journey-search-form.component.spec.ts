@@ -1,14 +1,7 @@
-import {
-  async,
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from '@blackforestsolutions/locodatamodel';
 import { JourneySearchFormComponent } from './journey-search-form.component';
-import { By } from '@angular/platform-browser';
 
 describe('JourneySearchFormComponent', () => {
   let component: JourneySearchFormComponent;
@@ -17,7 +10,8 @@ describe('JourneySearchFormComponent', () => {
   const validApiToken: ApiTokenAndUrlInformation = {
     departure: 'Berlin',
     arrival: 'München',
-    departureDate: new Date(),
+    arrivalDate: new Date().toISOString(),
+    departureDate: new Date().toISOString(),
   };
 
   beforeEach(async(() => {
@@ -45,8 +39,7 @@ describe('JourneySearchFormComponent', () => {
 
   it('should render departure FormControl correctly', () => {
     const compiled = fixture.debugElement.nativeElement;
-    const departureInput = compiled.querySelector('input[id="departure"]')
-      .value;
+    const departureInput = compiled.querySelector('input[id="departure"]').value;
 
     expect(departureInput).toBe(validApiToken.departure);
     expect(departureInput).toBeTruthy();
@@ -60,13 +53,19 @@ describe('JourneySearchFormComponent', () => {
     expect(arrivalInput).toBeTruthy();
   });
 
+  it('should render arrivalDate FormControl correctly', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    const arrivalDateInput = compiled.querySelector('input[id="arrivalDate"').value;
+
+    expect(arrivalDateInput).toBe(validApiToken.arrivalDate);
+    expect(arrivalDateInput).toBeTruthy();
+  });
+
   it('should render departureDate FormControl correctly', () => {
     const compiled = fixture.debugElement.nativeElement;
-    const departureDateInput = compiled.querySelector(
-      'input[id="departureDate"'
-    ).value;
+    const departureDateInput = compiled.querySelector('input[id="departureDate"').value;
 
-    expect(departureDateInput).toBe(validApiToken.departureDate.toString());
+    expect(departureDateInput).toBe(validApiToken.departureDate);
     expect(departureDateInput).toBeTruthy();
   });
 
@@ -84,6 +83,14 @@ describe('JourneySearchFormComponent', () => {
     expect(arrivalControl.errors).toBeNull();
     arrivalControl.setValue('');
     expect(arrivalControl.errors.required).toBeTruthy();
+  });
+
+  it('should validate arrivalDate FormControl correctly', () => {
+    const arrivalDateControl = component.apiTokenForm.get('arrivalDate');
+
+    expect(arrivalDateControl.errors).toBeNull();
+    arrivalDateControl.setValue(null);
+    expect(arrivalDateControl.errors.required).toBeTruthy();
   });
 
   it('should validate departureDate FormControl correctly', () => {

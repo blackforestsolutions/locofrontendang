@@ -1,4 +1,3 @@
-import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
 import { getApiToken } from './api-token.selectors';
 import { apiToken } from '../../../test/test-object-mother.spec';
 

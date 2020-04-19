@@ -1,14 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+import { JourneyControllerService, ApiTokenAndUrlInformation, Journey } from '@blackforestsolutions/locodatamodel';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable, of } from 'rxjs';
-
 import { JourneysEffects } from './journeys.effects';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { JourneyStoreService } from '../services/journey-store.service';
+import { loadJourneysByToken, loadJourneysByTokenSuccess, loadJourneysByTokenFailure } from './journeys.actions';
+import { hot, cold } from 'jasmine-marbles';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('JourneysEffects', () => {
-  const actions$: Observable<any> = new Observable();
+  let actions$: Observable<any>;
   let effects: JourneysEffects;
+  const apiToken: ApiTokenAndUrlInformation = {
+    arrival: '',
+    departure: '',
+    departureDate: new Date().toISOString(),
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,9 +22,9 @@ describe('JourneysEffects', () => {
         JourneysEffects,
         provideMockActions(() => actions$),
         {
-          provide: JourneyStoreService,
+          provide: JourneyControllerService,
           useValue: {
-            getJourneysBy: () => of(),
+            getJourneys: () => of([{} as Journey]),
           },
         },
       ],
@@ -29,5 +35,25 @@ describe('JourneysEffects', () => {
 
   it('should be created', () => {
     expect(effects).toBeTruthy();
+  });
+
+  it('should fire LoadJourneysByTokenSuccess for loadJourneysByToken', () => {
+    const action = loadJourneysByToken({ apiToken });
+    const completion = loadJourneysByTokenSuccess({ journeys: [{} as Journey] });
+
+    actions$ = hot('--a-', { a: action });
+    const expected = cold('--b', { b: completion });
+
+    expect(effects.loadJourneysByToken$).toBeObservable(expected);
+  });
+
+  it('should fire LoadJourneysByTokenFailure for loadJourneysByToken when error occurs', () => {
+    const action = loadJourneysByToken({ apiToken });
+    const completion = loadJourneysByTokenFailure({ error: new HttpErrorResponse({ error: 'failure' }) });
+
+    actions$ = hot('--#', { a: action });
+    const expected = cold('--b', { b: completion });
+
+    expect(effects.loadJourneysByToken$).toBeObservable(expected);
   });
 });

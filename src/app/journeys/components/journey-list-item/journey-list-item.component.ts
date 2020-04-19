@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Journey } from 'src/test/locodatamodel';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { Journey } from '@blackforestsolutions/locodatamodel';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'bs-journey-list-item',
@@ -13,4 +14,8 @@ export class JourneyListItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  originalOrder(a: KeyValue<number, string>, b: KeyValue<number, string>) {
+    return 0;
+  }
 }

@@ -1,13 +1,6 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input,
-  Output,
-  EventEmitter,
-} from '@angular/core';
-import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ApiTokenAndUrlInformation } from '@blackforestsolutions/locodatamodel';
 
 @Component({
   selector: 'bs-journey-search-form',
@@ -21,7 +14,8 @@ export class JourneySearchFormComponent implements OnInit {
   @Input() apiToken: ApiTokenAndUrlInformation = {
     arrival: '',
     departure: '',
-    departureDate: new Date(),
+    arrivalDate: new Date().toISOString(),
+    departureDate: new Date().toISOString(),
   };
   @Output() submitTokenEvent = new EventEmitter<ApiTokenAndUrlInformation>();
 
@@ -40,7 +34,8 @@ export class JourneySearchFormComponent implements OnInit {
       {
         departure: ['', [Validators.required]],
         arrival: ['', [Validators.required]],
-        departureDate: [null, [Validators.required]],
+        arrivalDate: [null, [Validators.required]],
+        departureDate: [null, [Validators.required]]
       },
       {
         updateOn: 'submit',

@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from '@blackforestsolutions/locodatamodel';
 
 export const updateApiToken = createAction(
   '[ApiTokenAndUrlInformation] Update ApiToken',

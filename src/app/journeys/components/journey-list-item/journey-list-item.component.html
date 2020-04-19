@@ -1,1 +1,113 @@
-{{ journey | json }}
+<table [border]="1">
+  <tr>
+    <th *ngFor="let prop of journey | keyvalue: originalOrder">
+      {{ prop.key }}
+    </th>
+  </tr>
+  <tr>
+    <ng-container
+      *ngFor="let journeyProp of journey | keyvalue: originalOrder"
+      [ngTemplateOutlet]="propValue"
+      [ngTemplateOutletContext]="{ link: journeyProp }"
+    >
+    </ng-container>
+  </tr>
+</table>
+
+<ng-template #propValue let-link="link">
+  <td [ngSwitch]="true" valign="top">
+    <ng-container
+      *ngSwitchCase="
+        link.key === 'gpsCoordinates' ||
+        link.key === 'origin' ||
+        link.key === 'direction' ||
+        link.key === 'start' ||
+        link.key === 'destination' ||
+        link.key === 'travelLine' ||
+        link.key === 'price' ||
+        link.key === 'priceWithCommision' ||
+        link.key === 'childPrice' ||
+        link.key === 'reducedPrice'
+      "
+      [ngTemplateOutlet]="objectValue"
+      [ngTemplateOutletContext]="{ link: link.value }"
+    >
+    </ng-container>
+    <ng-container
+      *ngSwitchCase="
+        link.key === 'departureTime' ||
+        link.key === 'arrivalTime' ||
+        link.key === 'startTime' ||
+        link.key === 'arrivalTime' ||
+        link.key === 'startTimeUpdated' ||
+        link.key === 'arrivalTimeUpdated'
+      "
+      [ngTemplateOutlet]="dateValue"
+      [ngTemplateOutletContext]="{ link: link.value }"
+    >
+    </ng-container>
+    <ng-container
+      *ngSwitchCase="link.key === 'betweenHolds'"
+      [ngTemplateOutlet]="dictionaryValue"
+      [ngTemplateOutletContext]="{ link: link.value }"
+    >
+    </ng-container>
+    <ng-container
+      *ngSwitchCase="link.key === 'journeysRelated'"
+      [ngTemplateOutlet]="arrayValue"
+      [ngTemplateOutletContext]="{ link: link.value }"
+    >
+    </ng-container>
+    <ng-container
+      *ngSwitchCase="link.key === 'value'"
+      [ngTemplateOutlet]="currencyValue"
+      [ngTemplateOutletContext]="{ link: link.value }"
+    >
+    </ng-container>
+    <!-- <ng-container
+          *ngSwitchCase="'betweenTrips'"
+          [ngTemplateOutlet]="arrayValue"
+          [ngTemplateOutletContext]="{ link: link.value }"
+        >
+        </ng-container> -->
+    <ng-container *ngSwitchDefault [ngTemplateOutlet]="normalValue" [ngTemplateOutletContext]="{ link: link.value }">
+    </ng-container>
+  </td>
+</ng-template>
+
+<ng-template #objectValue let-link="link">
+  <table [border]="1">
+    <tr *ngFor="let objectProp of link | keyvalue: originalOrder">
+      <td>{{ objectProp.key }}</td>
+      <ng-container [ngTemplateOutlet]="propValue" [ngTemplateOutletContext]="{ link: objectProp }"></ng-container>
+    </tr>
+  </table>
+</ng-template>
+
+<ng-template #dictionaryValue let-link="link">
+  <table [border]="1">
+    <tr *ngFor="let dictionary of link | keyvalue">
+      <td>
+        {{ dictionary.key }}
+      </td>
+      <td>
+        <ng-container [ngTemplateOutlet]="objectValue" [ngTemplateOutletContext]="{ link: dictionary.value }">
+        </ng-container>
+      </td>
+    </tr>
+  </table>
+</ng-template>
+
+<ng-template #arrayValue let-link="link">
+  <ng-container *ngFor="let value of link">
+    {{ value }}
+  </ng-container>
+</ng-template>
+
+<ng-template #dateValue let-link="link"> {{ link | date: 'fullDate' }} {{ link | date: 'mediumTime' }} </ng-template>
+
+<ng-template #currencyValue let-link="link">{{ link | currency: 'EUR':'code' }}</ng-template>
+
+<ng-template #normalValue let-link="link">
+  {{ link }}
+</ng-template>

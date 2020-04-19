@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { State } from 'src/app/reducers';
 import { updateApiToken } from 'src/app/store/api-token/api-token.actions';
 import { getApiToken } from 'src/app/store/api-token/api-token.selectors';
-import { ApiTokenAndUrlInformation } from 'src/test/api-token-and-url-information';
+import { ApiTokenAndUrlInformation } from '@blackforestsolutions/locodatamodel';
 
 @Component({
   selector: 'bs-journey-search',

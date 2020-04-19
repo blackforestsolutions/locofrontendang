@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CoreComponent } from './container/core.component';
 
+export const paths: any = {
+  home: '',
+  journeys: 'journeys',
+};
+
 const routes: Routes = [
   {
-    path: '',
+    path: paths.home,
     component: CoreComponent,
     children: [
       {
-        path: '',
+        path: paths.home,
         loadChildren: () => import('../api-token/api-token.module').then((m) => m.ApiTokenModule),
       },
       {
-        path: 'journeys',
+        path: paths.journeys,
         loadChildren: () => import('../journeys/journeys.module').then((m) => m.JourneysModule),
       },
     ],
