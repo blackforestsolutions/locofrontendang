@@ -22,7 +22,7 @@ jobs:
         run: yarn run lint
 
       - name: Unit Tests
-        run: yarn run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
+        run: yarn run test:cover
 
       - run: yarn run webdriver-update-ci
 
