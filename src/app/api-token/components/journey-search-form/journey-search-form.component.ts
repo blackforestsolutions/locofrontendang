@@ -26,7 +26,7 @@ export class JourneySearchFormComponent implements OnInit {
     this.apiTokenForm.patchValue(this.apiToken);
   }
 
-  private initForm() {
+  private initForm(): void {
     if (this.apiTokenForm) {
       return;
     }
@@ -35,7 +35,7 @@ export class JourneySearchFormComponent implements OnInit {
         departure: ['', [Validators.required]],
         arrival: ['', [Validators.required]],
         arrivalDate: [null, [Validators.required]],
-        departureDate: [null, [Validators.required]]
+        departureDate: [null, [Validators.required]],
       },
       {
         updateOn: 'submit',
@@ -43,7 +43,7 @@ export class JourneySearchFormComponent implements OnInit {
     );
   }
 
-  submitForm() {
+  submitForm(): void {
     if (this.apiTokenForm.invalid) {
       return;
     }

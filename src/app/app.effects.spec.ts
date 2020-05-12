@@ -16,7 +16,6 @@ describe('AppEffects', () => {
 
     effects = TestBed.inject<AppEffects>(AppEffects);
   });
-
   it('should be created', () => {
     expect(effects).toBeTruthy();
   });
