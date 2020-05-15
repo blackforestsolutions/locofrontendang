@@ -1,19 +1,20 @@
 <table [border]="1">
   <tr>
-    <th *ngFor="let prop of journey | keyvalue: originalOrder">
+    <th *ngFor="let prop of points() | keyvalue: originalOrder">
       {{ prop.key }}
     </th>
   </tr>
   <tr>
     <ng-container
-      *ngFor="let journeyProp of journey | keyvalue: originalOrder"
+      *ngFor="let journeyProp of points() | keyvalue: originalOrder"
       [ngTemplateOutlet]="propValue"
       [ngTemplateOutletContext]="{ link: journeyProp }"
     >
     </ng-container>
   </tr>
 </table>
-
+<!-- leg ist eine map -> siehe betweenholds -->
+<!-- price hat sich verändert -->
 <ng-template #propValue let-link="link">
   <td [ngSwitch]="true" valign="top">
     <ng-container
@@ -33,6 +34,7 @@
       [ngTemplateOutletContext]="{ link: link.value }"
     >
     </ng-container>
+    <!-- startimeupdatetd ... raus -->
     <ng-container
       *ngSwitchCase="
         link.key === 'departureTime' ||
@@ -46,8 +48,9 @@
       [ngTemplateOutletContext]="{ link: link.value }"
     >
     </ng-container>
+    <!-- between holds ist eine map -->
     <ng-container
-      *ngSwitchCase="link.key === 'betweenHolds'"
+      *ngSwitchCase="link.key === 'betweenHolds' || link.key === 'legs'"
       [ngTemplateOutlet]="dictionaryValue"
       [ngTemplateOutletContext]="{ link: link.value }"
     >
@@ -64,12 +67,12 @@
       [ngTemplateOutletContext]="{ link: link.value }"
     >
     </ng-container>
-    <!-- <ng-container
-          *ngSwitchCase="'betweenTrips'"
-          [ngTemplateOutlet]="arrayValue"
-          [ngTemplateOutletContext]="{ link: link.value }"
-        >
-        </ng-container> -->
+    <ng-container
+      *ngSwitchCase="'betweenTrips'"
+      [ngTemplateOutlet]="arrayValue"
+      [ngTemplateOutletContext]="{ link: link.value }"
+    >
+    </ng-container>
     <ng-container *ngSwitchDefault [ngTemplateOutlet]="normalValue" [ngTemplateOutletContext]="{ link: link.value }">
     </ng-container>
   </td>
@@ -106,6 +109,7 @@
 
 <ng-template #dateValue let-link="link"> {{ link | date: 'fullDate' }} {{ link | date: 'mediumTime' }} </ng-template>
 
+<!-- | pipes  -->
 <ng-template #currencyValue let-link="link">{{ link | currency: 'EUR':'code' }}</ng-template>
 
 <ng-template #normalValue let-link="link">

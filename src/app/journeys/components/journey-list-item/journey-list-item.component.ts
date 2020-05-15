@@ -15,7 +15,11 @@ export class JourneyListItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  originalOrder(a: KeyValue<number, string>, b: KeyValue<number, string>) {
+  points(): { [key: string]: Journey } {
+    return (this.journey as { [key: string]: any }) || {};
+  }
+
+  originalOrder(a: KeyValue<string, any>, b: KeyValue<string, any>) {
     return 0;
   }
 }
