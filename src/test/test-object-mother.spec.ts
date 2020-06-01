@@ -6,6 +6,7 @@ export const apiToken: ApiTokenAndUrlInformation = {
   arrival: 'Hamburg',
   departure: 'München',
   departureDate: new Date().toISOString(),
+  arrivalDate: new Date().toISOString(),
 };
 
 export const journey: Journey = { id: testUuuid1 };

@@ -11,12 +11,7 @@ import { ApiTokenAndUrlInformation } from '@blackforestsolutions/locodatamodel';
 export class JourneySearchFormComponent implements OnInit {
   apiTokenForm: FormGroup;
 
-  @Input() apiToken: ApiTokenAndUrlInformation = {
-    arrival: '',
-    departure: '',
-    arrivalDate: new Date().toISOString(),
-    departureDate: new Date().toISOString(),
-  };
+  @Input() apiToken: ApiTokenAndUrlInformation;
   @Output() submitTokenEvent = new EventEmitter<ApiTokenAndUrlInformation>();
 
   constructor(private formBuilder: FormBuilder) {}
@@ -30,22 +25,17 @@ export class JourneySearchFormComponent implements OnInit {
     if (this.apiTokenForm) {
       return;
     }
-    this.apiTokenForm = this.formBuilder.group(
-      {
-        departure: ['', [Validators.required]],
-        arrival: ['', [Validators.required]],
-        arrivalDate: [null, [Validators.required]],
-        departureDate: [null, [Validators.required]],
-      },
-      {
-        updateOn: 'submit',
-      }
-    );
+    this.apiTokenForm = this.formBuilder.group({
+      departure: ['', [Validators.required]],
+      arrival: ['', [Validators.required]],
+      arrivalDate: [null, [Validators.required]],
+      departureDate: [null, [Validators.required]],
+    });
   }
 
   submitForm(): void {
     if (this.apiTokenForm.invalid) {
-      return;
+      return; // abgebrochen wenn invalid
     }
     const formValue: ApiTokenAndUrlInformation = this.apiTokenForm.value;
     this.submitTokenEvent.emit(formValue);

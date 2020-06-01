@@ -14,7 +14,6 @@
   </tr>
 </table>
 <!-- leg ist eine map -> siehe betweenholds -->
-<!-- price hat sich verändert -->
 <ng-template #propValue let-link="link">
   <td [ngSwitch]="true" valign="top">
     <ng-container
@@ -26,23 +25,20 @@
         link.key === 'destination' ||
         link.key === 'travelLine' ||
         link.key === 'price' ||
-        link.key === 'priceWithCommision' ||
-        link.key === 'childPrice' ||
-        link.key === 'reducedPrice'
+        link.key === 'distance' ||
+        link.key === 'values' ||
+        link.key === 'affiliateLinks'
       "
       [ngTemplateOutlet]="objectValue"
       [ngTemplateOutletContext]="{ link: link.value }"
     >
     </ng-container>
-    <!-- startimeupdatetd ... raus -->
     <ng-container
       *ngSwitchCase="
         link.key === 'departureTime' ||
         link.key === 'arrivalTime' ||
         link.key === 'startTime' ||
-        link.key === 'arrivalTime' ||
-        link.key === 'startTimeUpdated' ||
-        link.key === 'arrivalTimeUpdated'
+        link.key === 'arrivalTime'
       "
       [ngTemplateOutlet]="dateValue"
       [ngTemplateOutletContext]="{ link: link.value }"
@@ -67,12 +63,12 @@
       [ngTemplateOutletContext]="{ link: link.value }"
     >
     </ng-container>
-    <ng-container
+    <!-- <ng-container
       *ngSwitchCase="'betweenTrips'"
       [ngTemplateOutlet]="arrayValue"
       [ngTemplateOutletContext]="{ link: link.value }"
     >
-    </ng-container>
+    </ng-container> -->
     <ng-container *ngSwitchDefault [ngTemplateOutlet]="normalValue" [ngTemplateOutletContext]="{ link: link.value }">
     </ng-container>
   </td>
