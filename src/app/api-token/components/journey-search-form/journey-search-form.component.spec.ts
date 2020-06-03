@@ -6,6 +6,7 @@ import { fakeAsync, async } from '@angular/core/testing';
 import { Button } from 'protractor';
 import { JourneySearchComponent } from '../../container/journey-search.component';
 import { createHostFactory } from '@ngneat/spectator';
+import { doc } from 'prettier';
 
 describe('JourneySearchFormComponent', () => {
   // scope of Tests
@@ -107,11 +108,40 @@ describe('JourneySearchFormComponent', () => {
       expect(spectator.component.apiToken).toEqual(expect.objectContaining({ departure: '', arrival: '' }));
     });
  */
-    // für alles tests
     it('should fill the empty departure formControl with valid input', () => {
       spectator.typeInElement('Furtwangen', '#departure');
 
       expect(spectator.component.apiTokenForm.get('departure').value).toEqual('Furtwangen');
+    });
+
+    it('should fill the empty arrival formControl with valid input', () => {
+      spectator.typeInElement('Triberg', '#arrival');
+
+      expect(spectator.component.apiTokenForm.get('arrival').value).toEqual('Triberg');
+    });
+
+    it('should fill the empty departureDate formControl with valid input', () => {
+      spectator.typeInElement('2020-06-03T14:06:11.970Z', '#departureDate');
+
+      expect(spectator.component.apiTokenForm.get('departureDate').value).toEqual('2020-06-03T14:06:11.970Z');
+    });
+
+    it('should fill the empty arrivalDate formControl with valid input', () => {
+      spectator.typeInElement('2020-06-03T14:06:14.970Z', '#arrivalDate');
+
+      expect(spectator.component.apiTokenForm.get('arrivalDate').value).toEqual('2020-06-03T14:06:14.970Z');
+    });
+
+    it('should fill the empty formControl with valid input', () => {
+      spectator.typeInElement('Schwenningen', '#departure');
+      spectator.typeInElement('Dauchingen', '#arrival');
+      spectator.typeInElement('2020-06-05T14:06:11.970Z', '#departureDate');
+      spectator.typeInElement('2020-06-07T14:06:11.970Z', '#arrivalDate');
+
+      expect(spectator.component.apiTokenForm.get('departure').value).toEqual('Schwenningen');
+      expect(spectator.component.apiTokenForm.get('arrival').value).toEqual('Dauchingen');
+      expect(spectator.component.apiTokenForm.get('departureDate').value).toEqual('2020-06-05T14:06:11.970Z');
+      expect(spectator.component.apiTokenForm.get('arrivalDate').value).toEqual('2020-06-07T14:06:11.970Z');
     });
 
     it('should not trigger an output', () => {
@@ -125,8 +155,7 @@ describe('JourneySearchFormComponent', () => {
   });
 });
 
-
-// 
+//
 /* describe('JourneySearchFormComponent Integrationtest', () => {
   let spectator: SpectatorHost<JourneySearchFormComponent, JourneySearchComponent>;
   const createHost = createHostFactory({
